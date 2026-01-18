@@ -13,3 +13,16 @@ echo "Total RAM : ${TOTAL} MB"
 echo "Terpakai  : ${USED} MB (${USED_PCT}%)"
 echo "Bebas     : ${FREE} MB (${FREE_PCT}%)"
 
+echo "Total Disk:"
+read TOTAL USED FREE PCT <<< $(df -h / | awk 'NR==2 {print $2,$3,$4,$5}')
+echo "Total Disk : $TOTAL"
+echo "Digunakan : $USED ($PCT)"
+echo "Kosong    : $FREE"
+
+
+echo "Top 5 CPU:"
+ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6
+
+echo "Top 5 RAM:"
+ps -eo pid,comm,%mem --sort=-%mem | head -n 6
+
