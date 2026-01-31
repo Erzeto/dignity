@@ -1,3 +1,6 @@
+.vscode-server/
+.vscode/
+node_modules/
 .ssh/
 .ssh/
 .ssh/
